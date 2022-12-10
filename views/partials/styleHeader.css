@@ -1,0 +1,32 @@
+.header1 {
+    margin-left: 700px;
+    
+}
+
+.titleLeft {
+    
+}
+
+.header {
+    margin-right: 20px;
+}
+
+body {
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 48%, rgba(13,224,228,1) 53%);
+}
+
+.title {
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+    color: #000000;
+    /*margin-left: 400px;*/
+}
+
+img {
+    width: 400;
+    height: 400;
+    max-width: 100%;  
+    height: auto;
+    margin-left: 400px;  
+}

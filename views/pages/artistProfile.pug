@@ -1,0 +1,39 @@
+html 
+    head 
+        title Artist information 
+    body 
+        include ../partials/headers
+        link(rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+        h1 Artist information
+        br
+        h3 Artist Information
+        p Name of artist: #{artist.artist}
+        each i, index in allArtwork 
+            if allArtwork[index].artist == artist.artist
+                h4 Artwork
+                a(href = "/artwork/" + allArtwork[index]._id) #{allArtwork[index].name}
+                br
+        
+            h4 Workshop
+            for i, index in userWork.workshops
+                a(href = "/workshop/" + artist.artist + "/" + userWork.workshops[index].workShopName) #{userWork.workshops[index].workShopName}
+                br
+        form(action = "/follow/" + session.userid + "/" + artist._id method = "post")
+            if(following.length == 0)
+                button(type = "submit" id = "choice") Follow
+                br
+                br
+            else
+                each i, index in following 
+                    // compare the id of the artist to the id of the followin
+                    if following[0]._id.equals(artist._id)
+                        button(type = "submit" id = "choice") Unfollow
+                        br
+                        br
+
+                        - break
+                    else
+                        button(type = "submit" id = "choice" ) Follow
+                        br
+                        br
+                        - break

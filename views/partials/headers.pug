@@ -1,0 +1,28 @@
+html 
+    head 
+        style
+
+            include styleHeader.css
+            link(rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    body#body1
+        if session && session.loggedin 
+            div(class = 'header1')
+                a(class = 'header' href = "/") Home
+                |
+                a(class = 'header' href = "/viewingArtworks") Viewing Artworks
+                |
+                a(class = 'header' href = "/viewingArtistProfiles") Viewing Artist Profiles
+                |
+                a(class = 'header' href = "/artists/" + session.userid + "/" + session.username) Artists
+                |
+                
+                a(class = 'header' href = "/accountType") Change account type
+                |
+                a(class = 'header' href = "/logout") Logout
+
+        else
+            div(class = 'header1')
+                a(class = 'header' href = "/") Home
+                |
+                a(class = 'header' href = "/useraccounts") User Accounts
+                

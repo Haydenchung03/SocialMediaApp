@@ -1,0 +1,18 @@
+html(lang="en")
+    head
+
+    body  
+        include ../partials/headers
+        link(rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+        br
+        h1(class = "title") Welcome to home page!
+        br
+        if session && session.loggedin 
+            div(class = 'userChoices1')
+                
+                a(href = "/userRating/" + session.username class = "button") User reviews
+                br
+                a(href = "/userFollow/" + session.userid class = "button") Users that you follow
+                br
+                a(href = "/notifications/" + session.userid class = "button") Notifications
+                

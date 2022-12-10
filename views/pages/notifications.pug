@@ -1,0 +1,17 @@
+html 
+    head 
+        title Notifications 
+    body 
+        include ../partials/headers
+        link(rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+        h1 Notifications
+        br
+        p You have #{notifications.length} notifications
+        br
+        each i, index in notifications
+            p #{notifications[index].notification}
+            br
+            a(href = "/artwork/" + notifications[index]._id) View Artwork
+            br
+            br
+            

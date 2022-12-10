@@ -1,0 +1,39 @@
+html 
+    head 
+        body
+        include ../partials/headers
+        link(rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+        h3 Submit or Update a review and rating 
+        br
+        
+        if session.username != artwork.artist
+            form(action = "/artwork/" + artwork._id method = "post")
+                textarea(class = "form-control is-invalid" name = "reviewForm" id="validationTextarea" placeholder="Submit some text for review" required)
+                br
+
+                input(type = "number" name = "rating" min = "1" max = "5" step = "1" value = "1")
+                br
+                br
+                button(type="submit") Post Review
+                br
+        else 
+            h3 You cannot rate your own stuff
+            br
+        h3 Drop a follow if you like this artist work!
+        a(href = "/artistProfile/" + artwork._id + "/" + artwork.artist) #{artwork.artist}
+        
+        h3 Reviews
+
+        a(href = "/artwork/" + artwork._id + "/reviews") See all reviews
+        br
+        br
+        h3 Artwork information
+        p(name = artwork.name) #{"Name of Artwork: " + artwork.name}
+        p #{"Name of Artist: " + artwork.artist}
+        p #{"Year: " + artwork.year}
+        p #{"Category: " + artwork.category}
+        p #{"Medium: " + artwork.medium}
+        p #{"Description: " + artwork.description}
+        img(src = artwork.image)
+        br
+

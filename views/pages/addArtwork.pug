@@ -1,0 +1,23 @@
+html 
+    head    
+        title Add Artwork 
+    body 
+        include ../partials/headers
+        link(rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+        h1 Add Artwork
+        br
+        form(action = "/artwork/" + session.username + "/" + session.userid method = "post")
+            textarea(class = "form-control is-invalid" name = "name" id="validationTextarea" placeholder="Name of artwork" required)
+            br
+            textarea(class = "form-control is-invalid" name = "year" id="validationTextarea" placeholder="Year of artwork" required)
+            br
+            textarea(class = "form-control is-invalid" name = "category" id="validationTextarea" placeholder="Category of artwork" required)
+            br
+            textarea(class = "form-control is-invalid" name = "medium" id="validationTextarea" placeholder="Medium of artwork" required)
+            br
+            textarea(class = "form-control is-invalid" name = "description" id="validationTextarea" placeholder="Description of artwork" required)
+            br
+            textarea(class = "form-control is-invalid" name = "image" id="validationTextarea" placeholder="Image of artwork" required)
+            br
+            button(type="submit") Add Artwork
+            br
