@@ -1,4 +1,4 @@
-# 2406Final
+# Social Media App
 # To run program, run this:
 1. npm install
 2. node database-initializer.js
